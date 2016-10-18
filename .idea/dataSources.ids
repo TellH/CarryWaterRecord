@@ -38,6 +38,7 @@
       <column id="10" parent="3" name="rid">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="11" parent="3" name="mid">
         <mandatory>1</mandatory>
@@ -46,12 +47,16 @@
       <column id="12" parent="3" name="time">
         <data-type>timestamp</data-type>
       </column>
-      <key id="13" parent="3" name="PRIMARY">
+      <index id="13" parent="3" name="id">
+        <columns>mid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="14" parent="3" name="PRIMARY">
         <columns>rid</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="14" parent="3" name="id">
-        <columns>rid</columns>
+      <foreign-key id="15" parent="3" name="id">
+        <columns>mid</columns>
         <ref-key>~.member.id_UNIQUE</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>

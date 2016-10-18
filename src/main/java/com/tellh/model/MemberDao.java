@@ -16,11 +16,18 @@ public class MemberDao {
     private JdbcTemplate jdbcTemplate;
 
     public Member get(int mid) {
-        return jdbcTemplate.queryForObject("SELECT * FROM carry_water.member WHERE id=?", new BeanPropertyRowMapper<>(Member.class), mid);
+        return jdbcTemplate.queryForObject("SELECT * FROM carry_water.member WHERE id=?",
+                new BeanPropertyRowMapper<>(Member.class), mid);
     }
 
     public List<Member> getAllMembers() {
-        return jdbcTemplate.query("SELECT * FROM carry_water.member", new BeanPropertyRowMapper<>(Member.class));
+        return jdbcTemplate.query("SELECT * FROM carry_water.member",
+                new BeanPropertyRowMapper<>(Member.class));
+    }
+
+    public Member getNextTurn() {
+        return jdbcTemplate.queryForObject("SELECT * FROM carry_water.member ORDER BY times,id LIMIT 1",
+                new BeanPropertyRowMapper<>(Member.class));
     }
 
     public void addRecordTimes(int mid) {

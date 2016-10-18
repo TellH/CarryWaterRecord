@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -23,12 +24,21 @@ public class RecordDao {
     @Autowired
     private MemberDao memberDao;
 
-    public List<Record> getAllRecord() {
-        List<Record> records = jdbcTemplate.query("SELECT * FROM carry_water.record",
-                new BeanPropertyRowMapper<>(Record.class));
+    public List<Record> getRecords(int startIndex, int pageSize) {
+        List<Record> records = jdbcTemplate_.query("SELECT * FROM carry_water.record ORDER BY rid DESC LIMIT ?,?",
+                new BeanPropertyRowMapper<>(Record.class), startIndex, pageSize);
+        for (Record record : records) {
+            Member member = memberDao.get(record.getMid());
+            record.setMember(member);
+        }
         return records;
     }
 
+    public int getRecordCount() {
+        return jdbcTemplate_.queryForObject("SELECT count(*) FROM carry_water.record", Integer.class);
+    }
+
+    @Transactional
     public void insert(Record record) {
         record.setTimestamp(new Timestamp(System.currentTimeMillis()));
         memberDao.addRecordTimes(record.getMid());

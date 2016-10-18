@@ -13,6 +13,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:BeanAppContext.xml"})
 public class MemberDaoTest {
     @Test
+    public void getNextTurn() throws Exception {
+        System.out.println(memberDao.getNextTurn());
+    }
+
+    @Test
     public void addRecordTimes() throws Exception {
         memberDao.addRecordTimes(1);
     }

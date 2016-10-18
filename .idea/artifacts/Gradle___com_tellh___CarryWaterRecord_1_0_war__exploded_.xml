@@ -10,14 +10,15 @@
         <element id="directory" name="classes">
           <element id="module-output" name="CarryWaterRecord_main" />
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javaee-web-api-6.0.jar" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.38" />
           <element id="library" level="project" name="Gradle: com.mchange:c3p0:0.9.5.2" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.17" />
           <element id="library" level="project" name="Gradle: org.aspectj:aspectjrt:1.8.9" />
           <element id="library" level="project" name="Gradle: org.aspectj:aspectjweaver:1.8.9" />
@@ -25,8 +26,8 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.3.RELEASE" />
-          <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.11" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.3.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.11" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
         </element>
       </element>

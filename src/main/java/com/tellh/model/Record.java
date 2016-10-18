@@ -43,6 +43,13 @@ public class Record {
         this.time = time;
     }
 
+    public Record(int mid) {
+        this.mid = mid;
+    }
+
+    public Record() {
+    }
+
     @Override
     public String toString() {
         return "Record{" +
