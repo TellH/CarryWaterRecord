@@ -12,6 +12,10 @@
             <param-name>CharSet</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
+        <init-param>
+            <param-name>access</param-name>
+            <param-value>*</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>CharSetFilter</filter-name>
